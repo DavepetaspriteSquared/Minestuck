@@ -1,8 +1,9 @@
 package com.mraof.minestuck.client.gui;
 
-import java.io.IOException;
-
-import net.minecraft.client.Minecraft;
+import com.mraof.minestuck.network.MinestuckChannelHandler;
+import com.mraof.minestuck.network.MinestuckPacket;
+import com.mraof.minestuck.network.TransportalizerPacket;
+import com.mraof.minestuck.tileentity.TileEntityTransportalizer;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiTextField;
@@ -10,10 +11,7 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.ResourceLocation;
 
-import com.mraof.minestuck.network.MinestuckChannelHandler;
-import com.mraof.minestuck.network.MinestuckPacket;
-import com.mraof.minestuck.network.TransportalizerPacket;
-import com.mraof.minestuck.tileentity.TileEntityTransportalizer;
+import java.io.IOException;
 
 public class GuiTransportalizer extends GuiScreen
 {
@@ -22,17 +20,11 @@ public class GuiTransportalizer extends GuiScreen
 	private static final int guiWidth = 126;
 	private static final int guiHeight = 98;
 
-	private Minecraft mc;
-	TileEntityTransportalizer te;
+	private TileEntityTransportalizer te;
 	private GuiTextField destinationTextField;
-	private GuiButton doneButton;
 
-	public GuiTransportalizer(Minecraft mc, TileEntityTransportalizer te)
+	public GuiTransportalizer(TileEntityTransportalizer te)
 	{
-		super();
-
-		this.mc = mc;
-		this.fontRendererObj = mc.fontRendererObj;
 		this.te = te;
 	}
 
@@ -44,8 +36,8 @@ public class GuiTransportalizer extends GuiScreen
 		this.destinationTextField.setMaxStringLength(4);
 		this.destinationTextField.setFocused(true);
 		this.destinationTextField.setText(this.te.getDestId());
-		
-		this.doneButton = new GuiButton(0, this.width / 2 - 20, yOffset + 50, 40, 20, I18n.format("gui.done", new Object[0]));
+
+		GuiButton doneButton = new GuiButton(0, this.width / 2 - 20, yOffset + 50, 40, 20, I18n.format("gui.done"));
 		this.buttonList.add(doneButton);
 	}
 	@Override
@@ -92,7 +84,7 @@ public class GuiTransportalizer extends GuiScreen
 			MinestuckPacket packet = new TransportalizerPacket();
 			packet.generatePacket(te.getPos().getX(), te.getPos().getY(), te.getPos().getZ(), this.destinationTextField.getText().toUpperCase());
 			MinestuckChannelHandler.sendToServer(packet);
-			this.mc.displayGuiScreen((GuiScreen)null);
+			this.mc.displayGuiScreen(null);
 		}
 	}
 

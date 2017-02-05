@@ -143,7 +143,9 @@ public class MinestuckModelManager
 		register(threshDvd);
 		register(crewPoster);
 		register(sbahjPoster);
-		
+		register(creditCard);
+		register(pda);
+
 		//Blocks
 		for(BlockChessTile.BlockType type : BlockChessTile.BlockType.values())
 			register(chessTile, type.ordinal(), "chesstile_"+type.name);

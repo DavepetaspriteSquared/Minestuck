@@ -16,7 +16,7 @@ import com.mraof.minestuck.tileentity.TileEntityTransportalizer;
 
 public class GuiHandler implements IGuiHandler 
 {
-	public static enum GuiId
+	public enum GuiId
 	{
 		MACHINE,
 		COMPUTER,
@@ -53,7 +53,7 @@ public class GuiHandler implements IGuiHandler
 			return new GuiComputer(Minecraft.getMinecraft(),(TileEntityComputer) tileEntity);
 		
 		if(id == GuiId.TRANSPORTALIZER.ordinal() && tileEntity instanceof TileEntityTransportalizer)
-			return new GuiTransportalizer(Minecraft.getMinecraft(), (TileEntityTransportalizer) tileEntity);
+			return new GuiTransportalizer((TileEntityTransportalizer) tileEntity);
 		
 		if(id == GuiId.COLOR.ordinal())
 			return new GuiColorSelector(false);

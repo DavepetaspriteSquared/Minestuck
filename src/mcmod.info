@@ -2,9 +2,9 @@
     {
         "name": "Minestuck", 
         "parent": "", 
-        "url": "http://www.mspaforums.com/showthread.php?43888-Minestuck", 
+        "url": "http://omegaupdate.freeforums.net/thread/412/",
         "logoFile": "/minestuck_logo.png", 
-        "updateUrl": "http://ci.mraof.com/job/Minestuck/", 
+        "updateUrl": "https://mods.io/mods/1050-minestuck",
         "credits": "Coded by Mraof, Kirderf1, Iconmaster and others, graphics by many others; see forum page for full credits.", 
         "version": "${version}", 
         "modid": "minestuck", 

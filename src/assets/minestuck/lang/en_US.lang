@@ -280,6 +280,7 @@ item.modusCard.queuestack.name=Queue-Stack Modus
 item.modusCard.tree.name=Tree Modus
 item.modusCard.hashmap.name=Hashmap Modus
 item.modusCard.set.name=Set Modus
+item.modusCard.array.name=Array Modus
 item.metalBoat.iron.name=Iron Boat
 item.metalBoat.gold.name=Golden Boat
 item.bucketObsidian.name=Obsidian Bucket
@@ -319,6 +320,10 @@ item.candyZillium.name=Zillium Skittles
 item.threshDvd.name=Thresh Prince DVD
 item.crewPoster.name=Midnight Crew Poster
 item.sbahjPoster.name=Sweet Bro and Hella Jeff Poster
+item.creditCard.name=Credit Card
+item.creditCard.tooltip=I'm thinking of a number, between 450 and 850. It's also between my buttocks. Can you guess it? It's your credit score! And it just so happens to be 720!
+item.pda.name=PDA
+item.pda.tooltip=Comes preinstalled with Pesterchum!
 
 itemGroup.tabMinestuck=Minestuck
 

@@ -9,6 +9,7 @@ import com.mraof.minestuck.network.CaptchaDeckPacket;
 import com.mraof.minestuck.network.MinestuckChannelHandler;
 import com.mraof.minestuck.network.MinestuckPacket;
 import com.mraof.minestuck.util.AlchemyRecipeHandler;
+import com.mraof.minestuck.util.Debug;
 import com.mraof.minestuck.util.MinestuckPlayerData;
 
 import net.minecraft.entity.item.EntityItem;
@@ -30,7 +31,8 @@ public class CaptchaDeckHandler
 		QUEUE_STACK(QueuestackModus.class, 2),
 		TREE(TreeModus.class, 3),
 		HASHMAP(HashmapModus.class, 4),
-		SET(SetModus.class, 5);
+		SET(SetModus.class, 5),
+		ARRAY(ArrayModus.class, 6);
 		
 		private final Class<? extends Modus> c;
 		public final int metadata;
@@ -117,6 +119,7 @@ public class CaptchaDeckHandler
 			if(modus == null)
 			{
 				modus = ModusType.getType(item.getItemDamage()).createInstance(Side.SERVER);
+				Debug.info(modus);
 				modus.player = player;
 				modus.initModus(null, MinestuckConfig.initialModusSize);
 				setModus(player, modus);
@@ -129,6 +132,7 @@ public class CaptchaDeckHandler
 				if(oldType.metadata == item.getItemDamage())
 					return;
 				modus = ModusType.getType(item.getItemDamage()).createInstance(Side.SERVER);
+				Debug.info(modus);
 				modus.player = player;
 				if(modus.canSwitchFrom(oldType))
 					modus.initModus(oldModus.getItems(), oldModus.getSize());
