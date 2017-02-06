@@ -48,8 +48,14 @@ public class GuiPesterchum extends GuiScreen
 	//TODO Add Custom Buttons
 	//TODO Add Class Inside GuiPesterchum that extends GuiButton
 
+	@Override
+	protected void actionPerformed(GuiButton guibutton)
+	{
 
+	}
 
+	/*static class PesterButton extends GuiButton
+	{
 
-
+	}*/
 }

@@ -32,7 +32,7 @@ public class CaptchaDeckHandler
 		TREE(TreeModus.class, 3),
 		HASHMAP(HashmapModus.class, 4),
 		SET(SetModus.class, 5),
-		ARRAY(ArrayModus.class, 6);
+		ARRAY(ArrayModus.class, 6); //CREATIVE ONLY
 		
 		private final Class<? extends Modus> c;
 		public final int metadata;
