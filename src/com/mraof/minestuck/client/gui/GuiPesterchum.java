@@ -46,13 +46,14 @@ public class GuiPesterchum extends GuiScreen
 	}
 
 	//TODO Add Custom Buttons
-	//TODO Add Class Inside GuiPesterchum that extends GuiButton
 
 	@Override
 	protected void actionPerformed(GuiButton guibutton)
 	{
 
 	}
+
+	//TODO Three buttons: Pester Grabs a list of all users who have a PDA and allows pestering, Add Chum simply gives a text box and adds the name to the left box, and block simply prevents the blocked user pestering you
 
 	/*static class PesterButton extends GuiButton
 	{
