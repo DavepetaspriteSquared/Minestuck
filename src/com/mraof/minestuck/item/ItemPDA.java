@@ -17,8 +17,6 @@ public class ItemPDA extends Item{
     public ActionResult<ItemStack> onItemRightClick(ItemStack item, World world, EntityPlayer player, EnumHand hand)
     {
 
-        Debug.info("Is world remote:"+ world.isRemote);
-
         if(world.isRemote) {
             Minecraft.getMinecraft().displayGuiScreen(new GuiPesterchum());
         }
