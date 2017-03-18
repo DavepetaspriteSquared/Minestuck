@@ -31,6 +31,8 @@ public class MinestuckPlayerData {
 	public static float rungProgress;
 	@SideOnly(Side.CLIENT)
 	public static int boondollars;
+	@SideOnly(Side.CLIENT)
+	public static String chumhandle;
 	
 	public static void onPacketRecived(GristCachePacket packet) {
 		if(packet.targetGrist)
@@ -120,6 +122,7 @@ public class MinestuckPlayerData {
 		public int color = -1;
 		public int boondollars;
 		public Echeladder echeladder;
+		public String chumhandle;
 		
 		private void readFromNBT(NBTTagCompound nbt)
 		{
@@ -142,6 +145,9 @@ public class MinestuckPlayerData {
 			
 			echeladder = new Echeladder(player);
 			echeladder.loadEcheladder(nbt);
+
+			if(nbt.hasKey("chumhandle"))
+				this.chumhandle = nbt.getString("chumhandle");
 		}
 		
 		private NBTTagCompound writeToNBT()
@@ -167,6 +173,10 @@ public class MinestuckPlayerData {
 			nbt.setInteger("boondollars", boondollars);
 			
 			echeladder.saveEcheladder(nbt);
+
+      if(this.chumhandle != null)
+      		nbt.setString("chumhandle", chumhandle);
+
 			return nbt;
 		}
 		
